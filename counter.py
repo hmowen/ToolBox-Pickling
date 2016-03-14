@@ -1,11 +1,8 @@
 """ A program that stores and updates a counter using a Python pickle file"""
 
-from os.path import exists
 import sys
 import os
-from pickle import dump, load
 import pickle
-#from pattern.web import *
 
 def update_counter(file_name, reset=False):
 	""" Updates a counter stored in the file 'file_name'
@@ -32,12 +29,6 @@ def update_counter(file_name, reset=False):
 	>>> update_counter('blah2.txt')
 	2
 	"""
-# ts_eliot_texts_FULL = URL('http://www.gutenberg.org/cache/epub/1567/pg1567.txt').download()
-# f = open('ts_eliot_full.pickle','w')
-# pickle.dump(ts_eliot_texts_FULL,f)
-# f.close()
-# input_file = open('ts_eliot_full.pickle','r')
-# reloaded_copy_of_eliot_texts = pickle.load(input_file)
 	if os.path.exists(file_name) == False:
 		f = open(file_name, 'w')
 		counter = 1
@@ -63,16 +54,6 @@ def update_counter(file_name, reset=False):
 			return counter
 
 	print counter
-
-
-
-
-# # Save data to a file (will be part of your data fetching script)
-# lincoln_speeches_FULL = URL('http://www.gutenberg.org/cache/epub/14721/pg14721.txt').download()
-# f = open('lincoln_speeches.pickle','w')
-# pickle.dump(lincoln_speeches_FULL,f)
-# f.close()
-
 
 if __name__ == '__main__':
 	if len(sys.argv) < 2:
